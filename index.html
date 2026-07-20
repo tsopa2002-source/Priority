@@ -1,41 +1,39 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="PriorityCash" />
-  <title>PriorityCash</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#111827" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="PriorityCash" />
+<title>PriorityCash</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo">₽</div>
-        <div>
-          <h1>PriorityCash</h1>
-          <p>Свободные деньги идут в первый незакрытый приоритет</p>
-        </div>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">₽</div>
+      <div>
+        <h1>PriorityCash</h1>
+        <p id="topSubtitle">Личные приоритеты и месячный план</p>
       </div>
-      <button id="saveIndicator" class="save-indicator" type="button" aria-live="polite">Сохранено</button>
-    </header>
-
-    <main id="view" class="main"></main>
-
-    <nav class="bottom-nav" aria-label="Навигация">
-      <button type="button" data-tab="dashboard" class="nav-btn active"><span>🏠</span>Сводка</button>
-      <button type="button" data-tab="plan" class="nav-btn"><span>🗓️</span>Месяцы</button>
-      <button type="button" data-tab="budget" class="nav-btn"><span>🧾</span>Бюджет</button>
-      <button type="button" data-tab="settings" class="nav-btn"><span>⚙️</span>Ввод</button>
-      <button type="button" data-tab="data" class="nav-btn"><span>💾</span>Данные</button>
-    </nav>
-  </div>
-  <script src="core.js"></script>
-  <script src="app.js"></script>
+    </div>
+    <button id="saveIndicator" class="save-indicator" type="button">Сохранено</button>
+  </header>
+  <main id="view" class="main"></main>
+  <nav class="bottom-nav" aria-label="Навигация">
+    <button type="button" data-tab="dashboard" class="nav-btn active"><span>🏠</span>Сводка</button>
+    <button type="button" data-tab="plan" class="nav-btn"><span>🗓️</span>Месяцы</button>
+    <button type="button" data-tab="budget" class="nav-btn"><span>🧾</span>Бюджет</button>
+    <button type="button" data-tab="settings" class="nav-btn"><span>⚙️</span>Настройки</button>
+    <button type="button" data-tab="data" class="nav-btn"><span>💾</span>Данные</button>
+  </nav>
+</div>
+<script src="core.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
