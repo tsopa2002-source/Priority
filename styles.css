@@ -1,0 +1,102 @@
+:root {
+  --bg: #f3f6f9;
+  --card: #ffffff;
+  --ink: #102033;
+  --muted: #637183;
+  --blue: #0f3557;
+  --blue-2: #174b77;
+  --line: #dbe4ee;
+  --input: #fff6d6;
+  --green: #dff3e5;
+  --green-ink: #17613a;
+  --red: #f7dcdc;
+  --red-ink: #8a1f1f;
+  --yellow: #fff1c6;
+  --purple: #e4ddf4;
+  --shadow: 0 8px 24px rgba(18, 38, 63, .08);
+  --radius: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+body { min-height: 100vh; }
+button, input, select, textarea { font: inherit; }
+.app-shell { min-height: 100vh; padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: calc(12px + env(safe-area-inset-top)) 16px 12px;
+  background: linear-gradient(135deg, var(--blue), #09243d);
+  color: white;
+  box-shadow: 0 4px 18px rgba(0,0,0,.15);
+}
+.topbar h1 { margin: 0; font-size: 20px; line-height: 1.1; }
+.topbar p { margin: 3px 0 0; color: rgba(255,255,255,.75); font-size: 13px; }
+.save-indicator {
+  border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.12); color: white;
+  border-radius: 999px; padding: 8px 10px; font-size: 12px;
+}
+.main { max-width: 920px; margin: 0 auto; padding: 14px 12px 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; margin: 10px 0; }
+.card h2, .card h3 { margin: 0; }
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.card-head h2 { font-size: 20px; margin-top: 3px; }
+.badge { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 24px; padding: 0 8px; border-radius: 999px; font-weight: 800; font-size: 14px; }
+.badge.A { background: var(--red); color: var(--red-ink); }
+.badge.B { background: var(--yellow); color: #6b4b00; }
+.badge.C { background: var(--green); color: var(--green-ink); }
+.badge.D { background: var(--purple); color: #473777; }
+.date-chip, .pill { border-radius: 999px; padding: 6px 10px; background: #eef4fa; color: var(--blue); font-weight: 700; font-size: 12px; white-space: nowrap; }
+.progress { height: 10px; background: #e9eff5; border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 10px; width: 0; background: linear-gradient(90deg, #1a97f5, #47c783); border-radius: 99px; transition: width .2s; }
+.money-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+.money-grid div { background: #f8fafc; border-radius: 14px; padding: 10px; }
+small { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+b { font-size: 14px; }
+.kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+.kpi strong { display: block; font-size: 18px; margin-top: 3px; }
+.section-title { margin: 20px 4px 8px; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .05em; font-size: 12px; }
+.month-card { padding: 12px; }
+.month-summary { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+.month-title { font-weight: 900; font-size: 17px; }
+.month-status { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 12px; }
+.field label { display: block; font-size: 11px; color: var(--muted); margin: 0 0 4px 4px; font-weight: 700; }
+.field input, .field select, .field textarea {
+  width: 100%; border: 1px solid #ccd7e3; border-radius: 14px; padding: 10px; background: var(--input); min-height: 42px;
+}
+.field textarea { min-height: 70px; resize: vertical; background: white; }
+.month-money { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+.month-money div { padding: 8px; border-radius: 12px; background: #f8fafc; min-height: 58px; }
+.priority-line { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.priority-line span { padding: 5px 8px; border-radius: 999px; background: #edf3f8; font-size: 12px; font-weight: 700; }
+.warning { background: var(--red); color: var(--red-ink); border-color: #f0b9b9; }
+.ok { background: var(--green); color: var(--green-ink); border-color: #b9e2c4; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+.btn {
+  border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 14px; padding: 11px 12px; font-weight: 800;
+  box-shadow: 0 4px 12px rgba(18,38,63,.06);
+}
+.btn.primary { background: var(--blue); color: white; border-color: var(--blue); }
+.btn.danger { background: #fff1f1; color: var(--red-ink); border-color: #ecc0c0; }
+.budget-item { display: grid; grid-template-columns: auto 1fr 120px; gap: 8px; align-items: center; }
+.budget-item input { width: 100%; border: 1px solid #ccd7e3; border-radius: 12px; padding: 9px; background: var(--input); }
+.budget-name { font-weight: 700; font-size: 13px; }
+.settings-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.data-box { white-space: pre-wrap; word-break: break-word; background: #0d1b2a; color: #d8efff; border-radius: 14px; padding: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; max-height: 220px; overflow: auto; }
+.bottom-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.92); backdrop-filter: blur(16px); border-top: 1px solid var(--line);
+}
+.nav-btn { border: 0; background: transparent; border-radius: 14px; padding: 10px 4px; font-size: 12px; color: var(--muted); font-weight: 800; }
+.nav-btn.active { background: var(--blue); color: white; }
+@media (max-width: 520px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .month-money { grid-template-columns: 1fr 1fr; }
+  .money-grid { grid-template-columns: 1fr; }
+  .budget-item { grid-template-columns: auto 1fr; }
+  .budget-item input { grid-column: 1 / -1; }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f3557" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="План машины" />
+  <title>План машины и комнаты</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>План машины</h1>
+        <p id="subtitle">A → B → C → D</p>
+      </div>
+      <button id="saveIndicator" class="save-indicator" type="button" aria-live="polite">Сохранено</button>
+    </header>
+
+    <main id="view" class="main"></main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+      <button type="button" data-tab="dashboard" class="nav-btn active">Сводка</button>
+      <button type="button" data-tab="plan" class="nav-btn">План</button>
+      <button type="button" data-tab="budget" class="nav-btn">Бюджет</button>
+      <button type="button" data-tab="settings" class="nav-btn">Ввод</button>
+      <button type="button" data-tab="data" class="nav-btn">Данные</button>
+    </nav>
+  </div>
+
+  <template id="priorityCardTemplate">
+    <section class="card priority-card">
+      <div class="card-head">
+        <div>
+          <span class="badge"></span>
+          <h2></h2>
+        </div>
+        <span class="date-chip"></span>
+      </div>
+      <div class="progress"><div class="progress-fill"></div></div>
+      <div class="money-grid">
+        <div><small>Цель</small><b class="target"></b></div>
+        <div><small>Накоплено</small><b class="saved"></b></div>
+        <div><small>Осталось</small><b class="left"></b></div>
+      </div>
+    </section>
+  </template>
+
+  <script src="core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
